@@ -1,4 +1,4 @@
-/* CSS variables */
+/* CSS Variables */
 :root {
   --primary: #ddd;
   --dark: #333;
@@ -38,8 +38,7 @@ img {
 /* Navigation */
 .main-nav ul {
   display: grid;
-  /*grid-gap: 20px;*/
-  gap: 20px;
+  grid-gap: 20px;
   padding: 0;
   list-style: none;
   grid-template-columns: repeat(4, 1fr);
@@ -61,24 +60,21 @@ img {
   background: var(--dark);
   color: var(--light);
 }
-/* Navigation end*/
 
-/* top container */
+/* Top Container */
 .top-container {
   display: grid;
-  /*grid-gap: 20px;*/
-  gap: 20px;
+  grid-gap: 20px;
   grid-template-areas:
     "showcase showcase top-box-a"
     "showcase showcase top-box-b";
 }
-/* top container end */
 
-/*showcase*/
+/* Showcase */
 .showcase {
   grid-area: showcase;
   min-height: 400px;
-  background: url(img/showcase.jpg);
+  background: url(https://image.ibb.co/kYJK8x/showcase.jpg);
   background-size: cover;
   background-position: center;
   padding: 3rem;
@@ -100,9 +96,8 @@ img {
   margin-top: 0;
   color: var(--light);
 }
-/*showcase end*/
 
-/* top box */
+/* Top Box */
 .top-box {
   background: var(--primary);
   display: grid;
@@ -119,7 +114,88 @@ img {
 .top-box-a {
   grid-area: top-box-a;
 }
+
 .top-box-b {
   grid-area: top-box-b;
 }
-/* top box end*/
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Info */
+.info {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      "showcase showcase"
+      "top-box-a top-box-b";
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      "showcase"
+      "top-box-a"
+      "top-box-b";
+  }
+}
